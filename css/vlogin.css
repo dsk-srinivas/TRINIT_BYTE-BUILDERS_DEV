@@ -44,7 +44,7 @@ html{
 
 .home{
   min-height: 100vh;
-  background:  url(bg6.jpg) no-repeat;
+  background:  url(../images/bg6.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
