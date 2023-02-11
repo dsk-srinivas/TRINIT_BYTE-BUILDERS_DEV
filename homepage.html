@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KisanKonnect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body id="home">
+
+    <div id="progressBar"></div>
+    <div id="scrollPath"></div>
+    <div class="cursor"></div>
+    <div class="load">
+        <div class="loader">
+            <div class="box"></div>
+        </div>
+    </div>
+ 
+        <section id="nav">
+            <nav class="my-nav">
+                <div class="my-nav-logo">
+                <h3>Kisan-Konnect</h3>
+                </div>
+                <div class="my-nav-list">
+                    <ul>
+                        <li>
+                            <a href="#home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li>
+                            <a href="#food">Latest Articles</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact us</a>
+                        </li><li>
+                        <a href="forum.html"> Forum</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="my-nav-icons">
+                    <ul>
+                        <li>
+                            <a href="#home">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#food">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#reservation">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="my-nav-button">
+                    <button id="login">Login</button>
+                </div>
+            </nav>
+        </section>
+
+        <section id="login">
+            <div class="login" id="modal">
+                <div class="modal-login">
+                    <div class="modal-header">
+                        <h3>Register/Login</h3>
+                        <span id="tutup">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-form">
+                            <form action="">
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input type="text" placeholder="Your name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Password</label>
+                                    <input type="password" placeholder="Your password">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="button">
+                            <button id="Cancel">Cancel</button>
+                           <a href="profile.html"> <button>Submit</button> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="header">
+            <div class="my-header">
+                <div class="header-text">
+                    <span></span>
+                    <h4>Your</h4>
+                    <h2>One stop Hub</h2>
+                    <h3>for all things<strong> Farming</strong></h3>
+                    <div class="header-text-link">
+                        <a href="forum.html">Start Now</a>
+                        <a href="vgallery.html">Watch Videos</a>
+                    </div>
+                </div>
+                <div class="header-image">
+                    <img src="img/svg/Hayride With Farmer Free Vector.svg" alt="">
+                </div>
+            </div>
+        </section>
+    
+        <section id="about">
+            <div class="my-about">
+                <div class="about-image">
+                    <img src="img/svg/undraw_Questions_re_1fy7.svg" alt="">
+                </div>
+                <div class="about-text">
+                    <h3>Why Us?</h3>
+                    <p>
+We believe that proper education is the key to successful farming and plant care. That's why we have created a one-stop-shop for all the information you need to take your skills to the next level.We offer a variety of educational resources, including articles, videos, tutorials, and more. Whether you prefer hands-on learning or are a visual learner, our application has something for everyone.And, with our community feature, you can connect with other farmers and plant care enthusiasts, exchange ideas and tips, and receive support and feedback.
+
+</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="food">
+            <div class="my-food">
+                <div class="food-text">
+                    <h3>Latest Articles</h3>
+                    <div class="food-search">
+                        <form action="">
+                            <input type="text" placeholder="search article">
+                        </form>
+                    </div>
+                </div>
+                <div class="food-list">
+                    <div class="food-card">
+                        <div class="food-card-image">
+                            <img src="img/image/vegetables-1085063_1920.jpg" alt="Hamburger">
+                            <button>Favourite</button>
+                        </div>
+                        <div class="food-card-body">
+                            <h3>Organic Fertilizers</h3>
+                            <div class="harga">
+                                <h4>Article 1</h4>
+                                <a>Read Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="food-card-image">
+                            <img src="img/image/pancakes-2291908_1920.jpg" alt="Hamburger">
+                            <button>Favourite</button>
+                        </div>
+                        <div class="food-card-body">
+                            <h3>Safety Net</h3>
+                            <div class="harga">
+                                <h4>Article 2</h4>
+                                <a>Read Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="food-card-image">
+                            <img src="img/image/salmon-518032_1920.jpg" alt="Hamburger">
+                            <button>Favourite</button>
+                        </div>
+                        <div class="food-card-body">
+                            <h3>Kolkata Society</h3>
+                            <div class="harga">
+                                <h4>Article 3</h4>
+                                <a>Read Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="food-card-image">
+                            <img src="img/image/pancake-1984716_1920.jpg" alt="Hamburger">
+                            <button>Favourite</button>
+                        </div>
+                        <div class="food-card-body">
+                            <h3>Community Farming</h3>
+                            <div class="harga">
+                                <h4>Article 4</h4>
+                                <a>Read Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="food-card-image">
+                            <img src="img/image/food-712665_1920.jpg" alt="Hamburger">
+                            <button>Favourite</button>
+                        </div>
+                        <div class="food-card-body">
+                            <h3>Fortune India</h3>
+                            <div class="harga">
+                                <h4>Article 5</h4>
+                                <a>Read Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-card">
+                        <div class="food-card-image">
+                            <img src="img/image/yogurt-1442034_1920.jpg" alt="Hamburger">
+                            <button>Favourite</button>
+                        </div>
+                        <div class="food-card-body">
+                            <h3>Farm laws</h3>
+                            <div class="harga">
+                                <h4>Article 6</h4>
+                                <a>Read Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quote">
+            <div class="my-quote">
+                <h3>"Your One stop Hub for all things Farming"</h3>
+            </div>
+        </section>
+<!--
+        <section id="reservation">
+            <div class="my-reservation">
+                <div class="reservation-text">
+                    <h3>Reservation Now</h3>
+                    <p>"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio, ipsam."</p>
+                </div>
+                <div class="reservation-list">
+                    <div class="reservation-info">
+                        <div class="card-info">
+                            <div class="card-number">
+                                <p>1</p>
+                            </div>
+                            <div class="card-text">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, est!</p>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-number">
+                                <p>2</p>
+                            </div>
+                            <div class="card-text">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, dolor!</p>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-number">
+                                <p>3</p>
+                            </div>
+                            <div class="card-text">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, dolor!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reservation-card">
+                        <form action="">
+                            <div class="reservation-group">
+                                <label for="">Your Name</label>
+                                <input type="text" placeholder="Your name">
+                            </div>
+                            <div class="reservation-group">
+                                <label for="">Number Of People</label>
+                                <input type="number">
+                            </div>
+                            <div class="reservation-group">
+                                <label for="">Date</label>
+                                <input type="date">
+                            </div>
+                            <div class="reservation-group">
+                                <label for="">Description</label>
+                                <textarea name="" id="" cols="30" rows="10" placeholder="Description"></textarea>
+                            </div>
+                            <div class="reservation-group">
+                                <button type="submit">Reservation</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+-->
+        <section id="contact">
+            <div class="contact">
+                
+                <div class="contact-content">
+                    <div class="contact-text">
+                        <h6>Call Us</h6>
+                        <h3>Our Contact</h3>
+                    </div>
+                    <div class="list-card">
+                        <div class="contact-card">
+                            <h3>Contact us</h3>
+                            <p>We are always here to help and answer any questions you may have. If you have any inquiries, suggestions, or feedback, please don't hesitate to reach out to us. You can contact us via email at bytebuilders@gmail.com, or you can use the form on this page to send us a message. Our team will make every effort to respond to your inquiry as soon as possible, typically within 24-48 hours. Thank you for visiting our website and we look forward to hearing from you soon!</p>
+                        </div>
+                        <div class="contact-card">
+                            <h3>Our Team</h3>
+                            <p>A project by 2nd Year CSBS Students from Thiagarajar College of Engineering, Madurai, Tamil Nadu </p> <p><u> Members </u></p><p> </p> <p> Mahalakshmi Murugan </p> <p> Srinivas Karthik D </p> <p> Sugindar A D </p>
+                        </div>
+                    </div>
+<!--
+                    <div class="maps">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.666466960686!2d106.82496411430981!3d-6.175387062231808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sMonumen%20Nasional!5e0!3m2!1sid!2sid!4v1617763519937!5m2!1sid!2sid" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+-->
+        <div class="footer">
+            <div class="footer">
+                <h3>Thanks For Visiting</h3>
+                <h6>This Website Created By >Byte Builders &copy; 2023</h6>
+            </div>
+        </div>
+
+        <div class="chat">
+            <a href="vlogin.html">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/> <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/> </svg>
+            </a>
+        </div>
+
+        <div class="loader-container">
+            <img src="img/image/loader.gif" alt="">
+        </div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

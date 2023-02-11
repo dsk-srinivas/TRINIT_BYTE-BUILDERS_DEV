@@ -3,18 +3,28 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VISION</title>
-
-    <!-- font awesome cdn link  -->
-    <script src="https://kit.fontawesome.com/545e67ef14.js" crossorigin="anonymous"></script>
-        
-    <link rel="stylesheet" href="css/all.css">
-
+    <link rel="icon" href="./logo.png">
+    
+    <title>Kisan-Konnect</title>
+    
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="manifest" href="./manifest.webmanifest">   
     <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/vlogin.css">
+    <link rel="stylesheet" href="index.css">
+    <script>
+        if('serviceWorker' in navigator)
+        {
+        navigator.serviceWorker.register('sw.js');
+        };
+        </script>
+<style>
+    .box{
+        cursor: pointer;
+    }
+</style>
 
 </head>
-    <body>
+    <body id="body">
         <section class="home" id="home">
 
 <div class="content">
@@ -23,17 +33,426 @@
 
 <div class="box-container">
 
-    <div class="box">
-<i class='fa fa-pied-piper-alt'></i>
-
-   <h3>FARMER</h3>
+    <div class="box" id="student">
+	  <a href="homepage.html">
+        <i class="fa fa-pied-piper-alt"></i>
+        <h3>FARMER</h3>
+</a>
     </div>
 
-    <div class="box">
-<i class='fa fa-user'></i>        
+    <div class="box" id="mentor">
+ <a href="homepage.html">
+        <i class="fa-solid fa-user-tie"></i>
         <h3>ENTHUSIAST</h3>
+</a>
     </div>
    </div>
 </div>
+
+<audio id="aud" hidden></audio>
+       
+</section>
+
+<script src="https://hammerjs.github.io/dist/hammer.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+   
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+
+<script type="text/javascript" src="//raw.githubusercontent.com/shantanubala/haptics.js/master/haptics.js"></script>
+
+<script type="module">
+
+localStorage.setItem('lang',"english");
+
+function annyan(){
+    if (annyang) {
+  // Let's define our first command. First the text we expect, and then the function it should call
+  var commands = {
+ 	'hindi': function(variable){
+      console.log('hindi');
+	  localStorage.setItem('lang',"hindi");
+    },
+  };
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening. You can call this here, or attach this call to an event, button, etc.
+  annyang.start();
+ }
+}
+
+const getDeviceType = () => {
+  const ua = navigator.userAgent;
+  if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+    return "m";
+  }
+  if (
+    /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+      ua
+    )
+  ) {
+    return "m";
+  }
+  return "d";
+};
+
+const sound = document.getElementById('aud');
+        document.getElementById('body').onclick = () =>{
+            if(getDeviceType() ==="m"){
+                sound.src = './audio/mobile/index.mp3';
+                sound.play();
+            }else if(getDeviceType() === "d"){
+                sound.src = './audio/desktop/index.mp3';
+                sound.play();
+            }
+        }
+
+        window.onload = () =>{
+            if(getDeviceType() === 'm'){
+                sound.src = './audio/mobile/index.mp3';
+                sound.play();
+            }else if(getDeviceType() === 'd'){
+                sound.src = './audio/desktop/index.mp3';
+                sound.play();
+            }
+        }
+
+function speak(text) {
+        // Create a new instance of SpeechSynthesisUtterance.
+            var msg = new SpeechSynthesisUtterance();
+        
+        // Set the text.
+            msg.text = text;
+        
+        /* Set the attributes.
+            msg.volume = parseFloat(volumeInput.value);
+            msg.rate = parseFloat(rateInput.value);
+            msg.pitch = parseFloat(pitchInput.value);
+        
+        // Queue this utterance.*/
+            window.speechSynthesis.speak(msg);
+        }
+
+
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
+    import { onSnapshot, getFirestore, collection, addDoc, setDoc, doc } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-firestore.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-analytics.js";
+    import { onAuthStateChanged, getAuth ,GoogleAuthProvider, signInWithPopup, setPersistence, browserSessionPersistence } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-auth.js"
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+   
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAuh0cssHk1z18lAwVrnGz8PvmfZC3Lcew",
+      authDomain: "vision-2e821.firebaseapp.com",
+      projectId: "vision-2e821",
+      storageBucket: "vision-2e821.appspot.com",
+      messagingSenderId: "67619375497",
+      appId: "1:67619375497:web:e90be78fa668de0debf958",
+      measurementId: "G-26YY8BBRFN"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const analytics = getAnalytics(app);
+    const provider = new GoogleAuthProvider(app);
+    const db = getFirestore(app);
+
+    function AddAllItems(courses){
+        const check = courses[0].user;
+        if(check != 'student'){
+            window.open('vmentor.html','_self');
+        }
+        else if(check === 'student'){
+            alert('you are a student');
+        }
+    }
+    
+    function next(uid){
+
+    const dbRef = collection(db,uid);
+
+            onSnapshot(dbRef,(querySnapshot)=> {
+            var courses = [];
+            querySnapshot.forEach(doc => {
+            courses.push(doc.data());
+            console.log(courses);
+        });
+        AddAllItems(courses);
+        })
+    }
+
+        var body = document.querySelector('#body');
+        var student= document.querySelector('#student');
+        var mentor = document.querySelector('#mentor');
+
+        var man1 = new Hammer(body);
+        var man2 = new Hammer(student);
+        var man3 = new Hammer(mentor);
+
+        man1.get('swipe').set({
+        direction: Hammer.DIRECTION_ALL,
+        velocity:0.1,
+        });
+
+        man2.get('swipe').set({
+        direction: Hammer.DIRECTION_ALL,
+        velocity:0.1,
+        });
+
+        man3.get('swipe').set({
+        direction: Hammer.DIRECTION_ALL,
+        velocity:0.1,
+        });
+
+        // listen to events...
+        man1.on("swipeleft", function(ev) {
+    setPersistence(auth, browserSessionPersistence)
+    .then(() => {
+
+    return signInWithPopup(auth, provider)
+    .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        const cust = auth.currentUser;
+ 
+        const displayName = cust.displayName;
+        const email = cust.email;
+        const photoURL = cust.photoURL;
+        const uid = cust.uid;
+
+        window.open("vhome.html","_self");
+        // ...
+    }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+    });
+
+    })
+    .catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+
+    });
+
+        man1.on("swiperight", function(ev) {
+
+setPersistence(auth, browserSessionPersistence)
+.then(() => {
+
+return signInWithPopup(auth, provider)
+.then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    const uid = user.uid; 
+    next(uid);
+}).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+});
+
+})
+.catch((error) => {
+// Handle Errors here.
+const errorCode = error.code;
+const errorMessage = error.message;
+});
+
+});
+
+    man1.on("swipeup", function(ev) { 
+        window.open('numberauth.html',"_self");
+    })
+
+        man2.on("doubletap", function(ev) {
+    setPersistence(auth, browserSessionPersistence)
+    .then(() => {
+
+    return signInWithPopup(auth, provider)
+    .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        const cust = auth.currentUser;
+ 
+        const displayName = cust.displayName;
+        const email = cust.email;
+        const photoURL = cust.photoURL;
+        const uid = cust.uid;
+
+        window.open("vhome.html","_self");
+        // ...
+    }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+    });
+
+    })
+    .catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+
+    });
+        man3.on("doubletap", function(ev) {
+
+setPersistence(auth, browserSessionPersistence)
+.then(() => {
+
+return signInWithPopup(auth, provider)
+.then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    const uid = user.uid; 
+    next(uid);
+}).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+});
+
+})
+.catch((error) => {
+// Handle Errors here.
+const errorCode = error.code;
+const errorMessage = error.message;
+});
+
+});
+
+    window.addEventListener("keyup", function(event) {
+        
+    if (event.keyCode === 32) {
+        annyan();
+    } 
+
+    if (event.key === "ArrowLeft") {
+    setPersistence(auth, browserSessionPersistence)
+    .then(() => {
+
+    return signInWithPopup(auth, provider)
+    .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        const cust = auth.currentUser;
+ 
+        const displayName = cust.displayName;
+        const email = cust.email;
+        const photoURL = cust.photoURL;
+        const uid = cust.uid;
+
+        window.open("vhome.html","_self");
+        // ...
+    }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+    });
+
+    })
+    .catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+
+    }
+
+    if (event.key === "ArrowUp") {
+        window.open('numberauth.html','_self');
+    }
+
+    if (event.key === "ArrowRight") {
+
+    setPersistence(auth, browserSessionPersistence)
+    .then(() => {
+
+    return signInWithPopup(auth, provider)
+    .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        const uid = user.uid; 
+        //next(uid);
+        window.open('vmentor.html','_self');
+        
+    }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was /used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+    });
+
+    })
+    .catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    });
+
+    }
+
+    });
+
+    
+
+  </script>
     </body>
 </html>

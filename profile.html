@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: #ddd;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+.chat {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  height: 80px;
+  background-color: var(--third-color);
+  border-radius: 50%;
+  margin: 30px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in;
+}
+
+.chat:hover {
+  transform: scale(1.1) rotate(30deg);
+  box-shadow: 0 0 30px rgb(238, 116, 126);
+}
+
+.chat svg {
+  width: 50px;
+  height: 50px;
+  color: white;
+}
+
+
+    *{
+        box-sizing: border-box;
+    }
+
+    .container{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: 20px 20px;
+    }
+
+    .box{
+        flex: 30%;
+        display: table;
+        align-items: center;
+        text-align: center;
+        font-size: 20px;
+        background-color: #0d1425;
+        color: #fff;
+        padding: 30px 30px;
+        border-radius: 20px;
+    }
+
+    .box img{
+        border-radius: 50%;
+        border: 2px solid #fff;
+        height: 250px;
+        width: 250px;
+    }
+
+    .box ul{
+        margin-top: 30px;
+        font-size: 30px;
+        text-align: center;
+    }
+    .box ul li{
+        list-style: none;
+        margin-top: 50px;
+        font-weight: 100;
+    }
+
+    .box ul li i{
+        cursor: pointer;
+        margin: 10px;
+        font-size: 40px;
+    }
+
+    .box ul li i:hover{
+        opacity: 0.6;
+    }
+
+    .About{
+        margin-left: 20px;
+        flex: 50%;
+        display: table;
+        padding: 30px 30px;
+        font-size: 20px;
+        background-color: #fff;
+        border-radius: 20px;
+    }
+
+    .About h1{
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 50px;
+        font-weight: 500;
+    }
+
+    .About ul li{
+        list-style: none;
+    }
+
+    .About ul{
+        margin-top: 20px;
+    }
+
+    @media screen and (max-width: 1068px) {
+        .container{
+            display: table;
+        }
+
+        .box{
+            width: 100%;
+        }
+
+        .About{
+            width: 100%;
+            margin: 0;
+            margin-top: 20px;
+        }
+
+        .About h1{
+            text-align: center;
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="rdj.webp" alt="">
+            <ul>
+                <li>KAMLESH.</li>
+                <li>50 years</li>
+                <li>FARMER</li>
+                <li><i style="font-size:24px" class="fa"></i>
+                    <i style="font-size:24px" class="fa"></i>
+                    <i style="font-size:24px" class="fa"></i></li>
+            </ul>
+        </div>
+        <div class="About">
+            <ul>
+                <h1>ABOUT</h1>
+            </ul>
+            <ul>
+                <h3>WORK</h3>
+                <li>FARMER</li>
+            </ul>
+            <ul>
+                <h3>GENDER</h3>
+                <li>MALE</li>
+            </ul>
+            <ul>
+                <h3>COUNTRY</h3>
+                <li>INDIA</li>
+            </ul>
+            <ul>
+                <h3>STATE</h3>
+                <li>TAMIL NADU</li>
+            </ul>
+            <ul>
+                <h3>DISTRICT</h3>
+                <li>MADURAI</li>
+            </ul>
+            <ul>
+                <h3>More Info</h3>
+                <p>Vanakam! My name is Kamlesh, and I am a proud farmer. I was born and raised in a small farming community and have always had a deep love and respect for the land and the farming lifestyle. I took over my family's farm a few years ago, and since then I have been working hard to maintain its traditions while also introducing new, innovative methods of farming to increase efficiency and productivity.</p>
+            </ul>
+        
+        </div>
+    </div>
+ <div class="chat">
+            <a href="homepage.html">
+                <svg style="color: red" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" fill="red"></path> <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" fill="red"></path> </svg>
+            </a>
+        </div>
+
+</body>
+</html>

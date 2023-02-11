@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./logo.png">
+  
+  <title>Kisan-Konnect</title>
+    <meta charset="UTF-8">
+<style>
+
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: chocolate;
+    text-shadow: 0 .1rem .1rem black;
+
+    cursor: pointer;
+    position: relative;
+    z-vlogin: 0;
+    border-radius: 10px;
+    margin: 0rem;
+    font-weight: 900px;
+  box-shadow: 0 .3rem 1rem rgba(222, 132, 5, 0.3);
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-vlogin: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: white
+
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-vlogin: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+   
+.waviy {
+  position: relative;
+}
+.waviy span {
+  position: relative;
+  display: inline-block;
+  color: chocolate;
+  padding:0.1rem;
+  text-shadow: 0 .1rem .1rem white;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  animation: flip 5s infinite;
+  animation-delay: calc(.2s * var(--i));
+
+}
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  position: relative;
+  bottom: 0px;
+}
+
+.content .waviy .he{
+  font-size : 1.8rem;
+}
+
+.mark{
+      border: 3px solid;
+      background: orange;
+      width: 100%;
+      overflow: hidden;
+      color: black;
+      font-weight: bold;
+      font-size: larger;
+      font-family: Arial, Helvetica, sans-serif;
+     }
+     
+body {
+  background-color: #3AAFA9;
+}
+
+@media (max-width:310px){
+
+  .content .h1{
+    font-size: 1.5rem;
+    position: relative;
+    top: 1rem;
+  }
+
+}
+
+@media (max-width:280px){
+
+  .content .waviy .he{
+    font-size : 1.9rem;
+  }
+
+  .content .h1{
+    font-size: 1.3rem;
+  }
+
+}
+ h1 {
+  font-size: 35px;
+  font-weight: 600;
+  background-image: linear-gradient(to left, chocolate, darkorange);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  
+}
+
+
+
+@font-face {
+  font-family: Clip;
+  src: url("https://acupoftee.github.io/fonts/Clip.ttf");
+}
+
+body {
+  background-color: #141114;
+  background-image: linear-gradient(335deg, black 23px, transparent 23px),
+    linear-gradient(155deg, black 23px, transparent 23px),
+    linear-gradient(335deg, black 23px, transparent 23px),
+    linear-gradient(155deg, black 23px, transparent 23px);
+  background-size: 58px 58px;
+  background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+}
+
+
+
+.sign {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  background-image: radial-gradient(
+    ellipse 50% 35% at 50% 50%,
+    #6b1839,
+    transparent
+  );
+  transform: translate(-50%, -50%);
+  letter-spacing: 2;
+  left: 50%;
+  top: 50%;
+  font-family: "Clip";
+  text-transform: uppercase;
+  font-size: 6em;
+  color: #ffe6ff;
+  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+    -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+    0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  animation: shine 2s forwards, flicker 3s infinite;
+}
+
+@keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+  28%,
+  33% {
+    color: #ff65bd;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: #ff2483;
+    text-shadow: none;
+  }
+}
+
+.flicker {
+  animation: shine 2s forwards, blink 3s 2s infinite;
+}
+
+.fast-flicker {
+  animation: shine 2s forwards, blink 10s 1s infinite;
+}
+
+@keyframes shine {
+  0% {
+    color: #6b1839;
+    text-shadow: none;
+  }
+  100% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 0.94;
+  }
+
+  28% {
+    opacity: 0.98;
+  }
+
+  37% {
+    opacity: 0.93;
+  }
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+.button-73 {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-radius: 40em;
+  border-style: none;
+  box-shadow: #ADCFFF 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-73:hover {
+  background-color: palevioletred;
+  box-shadow: #7a00ff 0 -6px 8px inset;
+  transform: scale(1.125);
+}
+
+.button-73:active {
+  transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+  .button-73 {
+    font-size: 1.5rem;
+    padding: .75rem 2rem;
+  }
+}
+
+
+
+
+
+
+</style>
+
+<script>
+    document.getElementsByTagName("h1")[0].style.fontSize = "80px";
+</script>
+
+</head>
+<body id="body">
+    <div class="mark">
+    <marquee direction="right" 
+        behavior="alternate" 
+        >
+      USE DOUBLE TAP INSTEAD OF SINGLE TAP FOR SELECTION
+    </marquee>
+    </div>
+    
+<div class="content">
+
+    <div class="sign">
+      <span class="fast-flicker">KI</span>SAN-<span class="flicker">KON</span>NECT
+    </div>
+    
+    <!--<h1 class="h1" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top: 10rem;">Select your Language</h1>-->
+<div class="waviy" style="margin-top: 10rem;">
+        
+  <span class="he" style="--i:1">S</span>
+  <span class="he" style="--i:2">E</span>
+  <span class="he" style="--i:3">L</span>
+  <span class="he" style="--i:4">E</span>
+  <span class="he" style="--i:5">C</span>
+  <span class="he" style="--i:6">T</span>
+  
+  <span class="he" style="--i:6">  </span>
+  <span class="he" style="--i:7">  </span>
+  
+  
+  <span class="he" style="--i:7">Y</span>
+  <span class="he" style="--i:8">O</span>
+  <span class="he" style="--i:9">U</span>
+  <span class="he" style="--i:10">R</span>
+  
+  <span class="he" style="--i:5"> </span>
+  <span class="he" style="--i:6"> </span>
+
+  <span class="he" style="--i:11">L</span>
+  <span class="he" style="--i:12">A</span>
+  <span class="he" style="--i:13">N</span>
+  <span class="he" style="--i:14">G</span>
+  <span class="he" style="--i:15">U</span>
+  <span class="he" style="--i:16">A</span>
+  <span class="he" style="--i:17">G</span>
+  <span class="he" style="--i:18">E</span>
+</div>
+
+</div>
+
+<div class="center">
+  
+
+<button class="button-73" role="button" id="english">ENGLISH</button>
+
+</div>
+<br>
+
+<div class="center">
+  <button class="button-73" role="button" id="hindi">HINDI</button>
+
+    <!--<button class="glow-on-hover" type="button" style="font-size: 35px; font-weight: 500;" id="hindi"> HINDI </button> -->
+
+  </div>
+  <br>
+
+  <audio id="lang" hidden></audio>
+  
+  <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+
+<script>
+
+const getDeviceType = () => {
+  const ua = navigator.userAgent;
+  if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+    return "m";
+  }
+  if (
+    /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+    return "m";
+  }
+  return "d";
+};
+
+let x = document.getElementById('lang');
+
+  window.onload = ()=>{
+    if(getDeviceType() === 'm'){
+      x.src = "./audio/mlang.mp3";
+      x.playbackRate = 0.85;
+      x.play();
+    }else if(getDeviceType() === 'd'){
+      x.src = "./audio/dlang.mp3";
+      x.playbackRate = 0.85;
+      x.play();
+    }
+  }
+
+  sessionStorage.removeItem("lang");
+
+  var eng = document.querySelector('#english');
+  var hin = document.querySelector('#hindi');
+  var body = document.querySelector('#body');
+
+  var man = new Hammer(body);
+  var man1 = new Hammer(eng);
+  var man2 = new Hammer(hin);
+
+  man.get('swipe').set({
+    direction: Hammer.DIRECTION_ALL,
+    velocity:0.1,
+  });
+
+  man1.get('swipe').set({
+    direction: Hammer.DIRECTION_ALL,
+    velocity:0.1,
+  });
+
+  man2.get('swipe').set({
+    direction: Hammer.DIRECTION_ALL,
+    velocity:0.1,
+  });
+
+  man.on("swipeleft", function(ev) {
+    sessionStorage.setItem("lang","english");
+    window.open("vlogin.html","_self")
+  });
+
+  man.on("swiperight", function(ev) {
+    sessionStorage.setItem("lang","hindi");
+    window.open("vlogin.html", "_self");
+  });
+
+  man1.on("doubletap", function(ev) {
+    sessionStorage.setItem("lang","english");
+    window.open("vlogin.html","_self")
+  });
+
+  man2.on("doubletap", function(ev)  {
+    sessionStorage.setItem("lang","hindi");
+    window.open("vlogin.html", "_self");
+  });
+  
+
+  window.addEventListener("keyup", (e)=>{
+    if(e.key === "ArrowLeft"){
+      sessionStorage.setItem("lang","english");
+      window.open("vlogin.html","_self")
+    }
+    if(e.key === "ArrowRight"){
+      sessionStorage.setItem("lang","hindi");
+      window.open("vlogin.html", "_self");
+    }
+  });
+
+</script>
+
+</body>
+</html>
